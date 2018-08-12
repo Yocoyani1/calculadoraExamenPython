@@ -2,14 +2,24 @@ import Calculadora as cl
 
 if __name__ == '__main__':
 	
-	n1 = input("Introduce el primer valor: ")
-	n2 = input("Introduce el segundo valor: ")
+	while True:
+		try:
+			n1 = input("Introduce el primer valor: ")
+			n2 = input("Introduce el segundo valor: ")
+			break
+		except : 
+			print("No es una entrada valida")
 	
 	calcu = cl.Calculadora(n1,n2)
 
 	while True:
 		
-		decision = int(raw_input("1)Suma\n2)Resta\n3)Multiplicacion\n4)Division\n5)Salir\n-->"))
+		while True:
+			try:
+				decision = int(raw_input("1)Suma\n2)Resta\n3)Multiplicacion\n4)Division\n5)Salir\n-->"))
+				break
+			except :
+				print("No es una entrada valida")			
 
 		if decision == 1:
 			print(calcu.suma())
@@ -23,7 +33,12 @@ if __name__ == '__main__':
 			break
 		else:
 			print("Operacion no valida")
+		while True:	
+			try:
+				n1 = input("Introduce el primer valor: ")
+				n2 = input("Introduce el segundo valor: ")
+				break
+			except :
+				print("No es una entrada valida")
 
-		n1 = input("Introduce el primer valor: ")
-		n2 = input("Introduce el segundo valor: ")
 		calcu.get(n1,n2)
